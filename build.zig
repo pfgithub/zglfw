@@ -45,7 +45,7 @@ pub fn build(b: *std.Build) void {
             .optimize = optimize,
         });
         if (target.result.os.tag == .windows) {
-            lib.root_module.addCMacro("_GLFW_BUILD_DLL", null);
+            lib.root_module.addCMacro("_GLFW_BUILD_DLL", "");
         }
         break :blk lib;
     } else b.addStaticLibrary(.{
